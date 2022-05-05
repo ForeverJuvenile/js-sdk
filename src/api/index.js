@@ -4,7 +4,7 @@ import weChatConfig  from '@common/wxConfig';
 const $axios = axios.create({
     // 设置超时时间
     timeout: 30 * 1000,
-    baseURL:  'http://dtest.rongxiangjiankang.com:9900',
+    baseURL: process.env.NODE_ENV === 'development'  ? 'http://dtest.rongxiangjiankang.com:9900' : 'https://drugs.rongxiangjiankang.com',
 });
 $axios.defaults.headers['Content-Type'] = 'application/json'
 

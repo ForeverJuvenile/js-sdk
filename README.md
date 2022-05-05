@@ -21,7 +21,8 @@ npm run lint
 ```
 
 ### 演示地址
-[http://ftest.rongxiangjiankang.com/wx-js-sdke](http://ftest.rongxiangjiankang.com/wx-js-sdke)
+[https://drugs.rongxiangjiankang.com/wx-js-sdk](https://drugs.rongxiangjiankang.com/wx-js-sdk)
+
 ![GitHub Dark](./src/assets/images/qrcode.png)
 
 

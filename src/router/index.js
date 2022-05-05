@@ -9,8 +9,9 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    /**测试Token */
-    sessionStorage.setItem('token', '37000875-6ee0-4894-a28f-10617e2856a1')
+    /**测试环境不需要授权登录 手动设置Token */
+    if(process.env.NODE_ENV === 'development') sessionStorage.setItem('token', '37000875-6ee0-4894-a28f-10617e2856a1'); 
+    
     const totken = sessionStorage.getItem('token') || false;
     /**微信授权 */
     if(!totken && !to.query.code) weChatConfig.authorize();

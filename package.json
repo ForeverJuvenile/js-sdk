@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build  --watch",
+    "serve": "vue-cli-service serve --open --copy  --mode",
+    "serve:prod": "vue-cli-service serve --open --copy  --mode production",
+    "build": "vue-cli-service build  --watch --mode development",
+    "build:prod": "vue-cli-service build  --watch --mode",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
