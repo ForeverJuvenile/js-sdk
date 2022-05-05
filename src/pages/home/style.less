@@ -1,0 +1,89 @@
+.js-sdk {
+    background: var(--var-four-color);
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: 20px;
+
+    header {
+        background: var(--var-there-color);
+        padding: 10px 0;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom: 1px solid  var(--var-four-color);
+        color: var(--var-six-color);
+    }
+
+    nav {
+        margin-top: 20px;
+
+        a {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 15px;
+            background: var(--var-there-color);
+            border-bottom: 1px solid  var(--var-four-color);
+        }
+    }
+
+    main {
+        margin-top: 20px;
+        
+        .card {
+            background-color: var(--var-there-color);
+            border-radius: 6px 6px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+
+            .header {
+                padding: 2vw 2vw;
+
+                .title {
+                    width: 100%;
+                    font-size: 16px;
+                    color: var(--var-one-color);
+                    margin-bottom: 6px;
+                    font-weight: bold;
+                }
+    
+                .tip {
+                    width: 100%;
+                    color: var(--var-two-color);
+                }
+            }
+
+            .content {
+                padding: 0 2vw;
+
+                button {
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .image {
+            .img-list {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+    
+                img, picture {
+                    min-width: 32%;
+                    max-width: 32%;
+                    margin-right: 2%;
+                    margin-bottom: 6px;
+                    max-height: 120px;
+    
+                    &:nth-child(3n) {
+                        margin-right: 0%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+    

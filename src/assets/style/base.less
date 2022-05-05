@@ -1,0 +1,82 @@
+
+body {
+  font-family: "PingFangSC-common","PingFangSC",sans-serif;
+  -webkit-user-select: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  -webkit-touch-callout:none;/*系统默认菜单被禁用*/
+  -webkit-user-select:none;/*webkit浏览器*/
+  -khtml-user-select:none;/*早起浏览器*/
+  -moz-user-select:none;/*火狐浏览器*/
+  -ms-user-select:none;/*IE浏览器*/
+  user-select:none;/*用户是否能够选中文本*/
+
+  /**ios禁用字体放大缩小功能**/
+  -webkit-text-size-adjust: 100% !important;  
+  text-size-adjust: 100% !important;  
+  -moz-text-size-adjust: 100% !important;  
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
+  color: var(--var-font-size-color);
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, p, dl, dt, dd, ul, ol, li, th, td, pre, button, input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+input,
+select,
+textarea {
+  outline: none !important;
+  &:focus-visible,
+  &:focus-within {
+    outline: none !important;
+  }
+}
+/*包含以下四种的链接*/
+a {
+    text-decoration: none;
+    color: var(--var-one-color);
+}
+/*正常的未被访问过的链接*/
+a:link {
+    text-decoration: none;
+}
+/*已经访问过的链接*/
+a:visited {
+    text-decoration: none;
+}
+/*鼠标划过(停留)的链接*/
+a:hover {
+    text-decoration: none;
+}
+/* 正在点击的链接*/
+a:active {
+    text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, img {
+    -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+
+img {
+  border-style: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+ol, ul, li {
+  list-style: none;
+}

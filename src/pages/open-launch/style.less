@@ -1,0 +1,74 @@
+.open-launch {
+    background: var(--var-four-color);
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100%;
+    font-size: 14px;
+
+    a {
+        display: inline-block;
+        width: 100%;
+    }
+
+    header {
+        background: var(--var-there-color);
+        padding: 10px 0;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom: 1px solid  var(--var-four-color);
+        color: var(--var-six-color);
+    }
+    nav {
+        margin-top: 20px;
+
+        a {
+            padding: 15px 15px;
+            background: var(--var-there-color);
+            border-bottom: 1px solid  var(--var-four-color);
+        }
+    }
+
+    main {
+        margin-top: 20px;
+        
+        .card {
+            background: var(--var-there-color);
+            border-radius: 6px 6px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+
+            .header {
+                padding: 10px 10px;
+
+                .title {
+                    font-size: 16px;
+                    color: var(--var-one-color);
+                    margin-bottom: 6px;
+                    font-weight: bold;
+                }
+    
+                .tip {
+                    color: var(--var-two-color);
+                }
+            }
+    
+            .content {
+                padding: 0 15px;
+                position: relative;
+                
+                .weapp {
+                    position: absolute;
+                     top: 0; 
+                     left: 0; 
+                     width: 100%;
+                      height: 100%;
+                }
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
