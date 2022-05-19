@@ -213,15 +213,15 @@
     ````
 
    - 下载语音接口
-     ````JavaScript
-        weChatConfig.downloadVoice({
-            serverId: '', /**serverId*/ 
-            isShowProgressTips: 1, /**默认为1，显示进度提示*/ 
-            success: function (res) {
-                /**返回音频的本地ID*/ 
-            }
-        });
-    ````
+        ````JavaScript
+            weChatConfig.downloadVoice({
+                serverId: '', /**serverId*/ 
+                isShowProgressTips: 1, /**默认为1，显示进度提示*/ 
+                success: function (res) {
+                    /**返回音频的本地ID*/ 
+                }
+            });
+        ````
 
 ##### 5. 智能接口(语音转文字)
   - 识别音频并返回识别结果接口

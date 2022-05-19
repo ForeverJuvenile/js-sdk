@@ -35,3 +35,9 @@ npm run lint
         app.config.isCustomElement = tag => tag.startsWith('wx-');
     }
 ````
+
+### JS-SDK
+
+[JS-SDK](/src/common/README.md)
+<br/>
+[所有menu项](./MENU.md)
