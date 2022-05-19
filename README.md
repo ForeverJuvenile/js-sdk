@@ -21,8 +21,7 @@ npm run lint
 ```
 
 ### 演示地址
-[https://drugs.rongxiangjiankang.com/wx-js-sdk](https://drugs.rongxiangjiankang.com/wx-js-sdk)
-
+[http://ftest.rongxiangjiankang.com/wx-js-sdke](http://ftest.rongxiangjiankang.com/wx-js-sdke)
 ![GitHub Dark](./src/assets/images/qrcode.png)
 
 
@@ -36,6 +35,3 @@ npm run lint
         app.config.isCustomElement = tag => tag.startsWith('wx-');
     }
 ````
-
-### JS-SDK文档说明
-[JS-SDK文档](./src/common/README.md)

@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import FastClick from 'fastclick';
 import weChatConfig  from '@common/wxConfig';
 import { wxSignature } from '@api/index';
 import App from './App.js';
@@ -8,13 +9,13 @@ import router from './router';
 (function () {
     let str = navigator.userAgent.toLowerCase();
     let ver = str.match(/cpu iphone os (.*?) like mac os/);
-    window.FastClick.prototype.focus = function (targetElement) {
+    FastClick.prototype.focus = function (targetElement) {
         targetElement.focus();
     };
     if (ver && parseInt(ver[1], 0) >= 11) {
         return; // 不必引入fastclick文件
     }
-    window.FastClick.attach(document.body);
+    FastClick.attach(document.body);
 })();
 
 /**页面刷新后有着重要的作用 全局注入wx.config*/

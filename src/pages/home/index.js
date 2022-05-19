@@ -30,7 +30,9 @@ export default defineComponent({
         /**判断当前客户端版本是否支持指定JS接口 */
         const checkJsApi = () => {
             weChatConfig.checkJsApi({
-                success: (res) => alert(res)
+                success: (res) => {
+                    alert(JSON.stringify(res.checkResult))
+                }
             })
         }
 
@@ -48,7 +50,13 @@ export default defineComponent({
 
         /**获取“分享到腾讯微博”按钮点击状态及自定义分享内容接口 */
         const onMenuShareWeibo = () => {
-            weChatConfig.onMenuShareWeibo(defaultShare);
+            weChatConfig.onMenuShareWeibo({
+                ...defaultShare,
+                success: () => {
+                    alert('分享成功！')
+                }
+            });
+            haddleIng();
         }
 
         /**拍照或从手机相册中选图接口 */
@@ -318,7 +326,7 @@ export default defineComponent({
         const openAddress = () => {
             weChatConfig.openAddress({
                 success: (address) => {
-                   alert(address)
+                   alert(JSON.stringify(address))
                 }
             });
         }
@@ -342,8 +350,7 @@ export default defineComponent({
 
         /**切换主题模式 */
         const haddleDarkMode = (type) => {
-            document.documentElement.removeAttribute('data-theme');
-            document.documentElement.setAttribute('data-theme', type);
+            document.getElementsByTagName('body')[0].className = type; 
             alert('切换主题成功！');
         }
 
@@ -534,7 +541,7 @@ export default defineComponent({
                         <div className="card image">
                             <div className="header">
                                 <p className="title">图像接口</p>
-                                <p className="tip">1、获取本地/获取相机 => 获取本地图片 => 展示列表</p>
+                                <p className="tip">1、获取本地/获取相机 》 获取本地图片 》 展示列表</p>
                                 <p className="tip">2、点击图片也可进行预览</p>
                                 <p className="tip">3、上传/下载图片，默认只取图片列表中第一条进行上传/下载</p>
                             </div>
@@ -606,6 +613,7 @@ export default defineComponent({
                             </div>
                             <div className="content">
                                 <Button value="识别音频并返回识别结果接口" onClick={translateVoice}/>
+                                {/* <Button value="更多智能接口" onClick={haddleToRouter.bind(this,{ path: '/smart' })}/> */}
                             </div>
                         </div>
                     </a>
@@ -724,11 +732,12 @@ export default defineComponent({
                                 <p className="tip">默认：跟随系统配置</p>
                                 <p className="tip">iOS：“设置”--“显示与亮度”--“外观”，选择“深色”</p>
                                 <p className="tip">Androi：“系统设置”--“显示”--“深色模式”</p>
+                                <p className="tip">切换主题模式（并未切换微信系统主题）</p>
                             </div>
                             <div className="content">
                                 <Button 
                                     value="浅色模式" 
-                                    onClick={haddleDarkMode.bind(this, 'light')}
+                                    onClick={haddleDarkMode.bind(this, 'theme')}
                                 />
                                  <Button 
                                     value="深色模式" 

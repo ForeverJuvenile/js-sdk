@@ -67,8 +67,6 @@ class weChatConfig {
 				'downloadVoice',
 				'downloadImage',
 				'translateVoice',
-				'hideOptionMenu',
-				'showOptionMenu',
 				'showMenuItems',
 				'hideAllNonBaseMenuItem',
 				'showAllNonBaseMenuItem',
@@ -114,8 +112,6 @@ class weChatConfig {
 					'getLocation',
 					'hideOptionMenu',
 					'showOptionMenu',
-					'hideMenuItems',
-					'showMenuItems',  
 					'hideAllNonBaseMenuItem',
 					'showAllNonBaseMenuItem',
 					'closeWindow',
@@ -184,10 +180,14 @@ class weChatConfig {
 	 * @param {Array} jsApiList JS接口列表
 	 * */
 	checkJsApi({jsApiList = this.configInfo.jsApiList, success}) {
+		console.log(jsApiList);
 		wx.checkJsApi({
 			jsApiList, // 需要检测的JS接口列表，所有JS接口列表见附录2,
 			success: function(res) {
 				if(success) success(res);
+			},
+			fail: (err) => {
+				console.err(err);
 			}
 		});
 	}
@@ -264,6 +264,7 @@ class weChatConfig {
 			imgUrl, 
 			desc,
 			success: function () { /**用户确认分享后执行的回调函数 */
+			
 				try {
 					if(success) success();
 				} catch(err) {
@@ -546,6 +547,7 @@ class weChatConfig {
 	 * @param {Function} fail 支付失败回调函数
  	* */
 	chooseWXPay({appId, timeStamp, nonceStr, packages,  signType, paySign, success, cancel, fail}) {
+		this.payInfo = {appId, timeStamp, nonceStr, packages,  signType, paySign, success, cancel, fail};
 		wx.chooseWXPay({
 			appId,
             timeStamp, 
@@ -570,13 +572,11 @@ class weChatConfig {
 		});
 		if (typeof WeixinJSBridge == "undefined"){
 			if( document.addEventListener ){
-				document.addEventListener('WeixinJSBridgeReady', weChatConfig.chooseWXPay, false);
+				document.addEventListener('WeixinJSBridgeReady', this.chooseWXPay.bind(this.payInfo), false);
 			}else if (document.attachEvent){
-				document.attachEvent('WeixinJSBridgeReady', weChatConfig.chooseWXPay); 
-				document.attachEvent('onWeixinJSBridgeReady', weChatConfig.chooseWXPay);
+				document.attachEvent('WeixinJSBridgeReady', this.chooseWXPay.bind(this.payInfo),); 
+				document.attachEvent('onWeixinJSBridgeReady', this.chooseWXPay.bind(this.payInfo),);
 			}
-		}else{
-			weChatConfig.chooseWXPay();
 		}
 	}
 

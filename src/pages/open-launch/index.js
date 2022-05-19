@@ -13,7 +13,7 @@ export default defineComponent({
 
         /**跳转公众号/订阅号 */
         const openLaunchSubscription  = () => {
-            location.href =   'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzk0MjIyNzYzOA==#wechat_redirect'
+            location.href =   'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU3NzgzODU4Mg==#wechat_redirect'
         }
 
         return {
@@ -76,7 +76,7 @@ export default defineComponent({
                             <div className="header" >
                                 <p className="title">跳转小程序</p>
                                 <p className="tip">以下均为实操案例: 泰享健康护理版（省人民）小程序</p>
-                                <p className="tip">通过：小程序URL Scheme 实现</p>
+                                <p className="tip">通过：小程序URL Scheme 实现 (微信长期有效被🈲)</p>
                             </div>
                             <div className="content">
                                 <Button value="点击我跳转小程序" onClick={openLaunchWeapp}/>
@@ -111,7 +111,7 @@ export default defineComponent({
                             <div className="content">
                                 <wx-open-subscribe
                                     className="weapp"
-                                    template="STK1XlPHXxMskNc3YVilmOLKRVLmRSbr028Fy4C1wfQ,STK1XlPHXxMskNc3YVilmOLKRVLmRSbr028Fy4C1wfQ" 
+                                    template="MHZyC98tsc1DncN2UVcyvQYmbZeIzPS0QZ22eyJ6tms" 
                                 >
                                      <script type="text/wxtag-template">
                                         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0 }} />

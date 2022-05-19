@@ -136,7 +136,7 @@ export default defineComponent({
                 <header>语音案例</header>
                 <main>
                 <div className="card">
-                        <Button onClick={haddleOpenVoice} value="开始体验"/>     
+                        <Button onClick={haddleOpenVoice} value={ state.show ? '结束体验' : '开始体验' }/>     
                     </div>
 
                     <ul className="audio-list">
