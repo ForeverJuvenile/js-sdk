@@ -40,4 +40,4 @@ npm run lint
 
 [JS-SDK](/src/common/README.md)
 <br/>
-[所有menu项](./MENU.md)
+[所有menu项](/src/common/MENU.md)
